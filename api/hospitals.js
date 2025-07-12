@@ -31,7 +31,7 @@ const handler = async(req, res) => {
             res.status(200).json(hospitalData);
         }
         catch(err){
-            res.status(err.status).json({msg: err.message});
+            res.status(500).json({msg: err.message});
         }
     }
     else{
