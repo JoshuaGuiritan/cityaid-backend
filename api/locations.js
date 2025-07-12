@@ -1,4 +1,4 @@
-export default handler = async(req, res) => {
+const handler = async(req, res) => {
     if(req.method === "GET"){
         try{
             const ress = await fetch(process.env.LOCATION_SOURCE);
@@ -23,3 +23,5 @@ export default handler = async(req, res) => {
         res.status(405).json({msg: "Method Not Allowed!"});
     }
 }
+
+export default handler;

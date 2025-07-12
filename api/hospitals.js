@@ -1,4 +1,4 @@
-export default handler = async(req, res) => {
+const handler = async(req, res) => {
     if(req.method === "POST"){
         try{
             const latitude = Number(req.body.latitude);
@@ -38,3 +38,5 @@ export default handler = async(req, res) => {
         res.status(405).json({msg: "Method Not Allowed!"});
     }
 }
+
+export default handler;
