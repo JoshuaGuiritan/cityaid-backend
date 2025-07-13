@@ -8,10 +8,10 @@ const handler = async(req, res) => {
         return;
     }
 
-    if(req.method === "POST"){
+    if(req.method === "GET"){
         try{
-            const latitude = parseFloat(req.body.latitude);
-            const longitude = parseFloat(req.body.longitude);
+            const latitude = 6.9067
+            const longitude = 122.0673
 
             const radius = 5000;
             const query = `
