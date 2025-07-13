@@ -1,6 +1,6 @@
 const handler = async(req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     if (req.method === 'OPTIONS') {
@@ -8,10 +8,10 @@ const handler = async(req, res) => {
         return;
     }
 
-    if(req.method === "POST"){
+    if(req.method === "GET"){
         try{
-            const latitude = parseFloat(req.body.latitude);
-            const longitude = parseFloat(req.body.longitude);
+            const latitude = 6.9828//parseFloat(req.body.latitude);
+            const longitude = 121.9303//parseFloat(req.body.longitude);
 
             const location = {
                 latitude: latitude,
