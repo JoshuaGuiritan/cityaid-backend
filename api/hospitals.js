@@ -8,7 +8,7 @@ const handler = async(req, res) => {
         return;
     }
 
-    if(req.method === "GET"){
+    if(req.method === "POST"){
         try{
             const latitude = parseFloat(req.body.latitude);
             const longitude = parseFloat(req.body.longitude);
