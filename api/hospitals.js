@@ -10,8 +10,8 @@ const handler = async(req, res) => {
 
     if(req.method === "POST"){
         try{
-            const latitude = Number(req.body.latitude);
-            const longitude = Number(req.body.longitude);
+            const latitude = parseFloat(req.body.latitude);
+            const longitude = parseFloat(req.body.longitude);
 
             const location = {
                 latitude: latitude,
