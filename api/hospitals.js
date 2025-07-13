@@ -10,8 +10,8 @@ const handler = async(req, res) => {
 
     if(req.method === "GET"){
         try{
-            const latitude = 6.9828//parseFloat(req.body.latitude);
-            const longitude = 121.9303//parseFloat(req.body.longitude);
+            const latitude = 50.1960//parseFloat(req.body.latitude);
+            const longitude = 6.8712//parseFloat(req.body.longitude);
 
             const location = {
                 latitude: latitude,
