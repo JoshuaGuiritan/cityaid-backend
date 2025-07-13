@@ -10,9 +10,8 @@ const handler = async(req, res) => {
 
     if(req.method === "GET"){
         try{
-            const latitude = 6.9067
-            const longitude = 122.0673
-
+            const latitude = parseFloat(req.body.latitude);
+            const longitude = parseFloat(req.body.longitude);
             const radius = 5000;
             const query = `
                 [out:json][timeout:25];
