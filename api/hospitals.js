@@ -1,6 +1,6 @@
 const handler = async(req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     if (req.method === 'OPTIONS') {
@@ -8,23 +8,18 @@ const handler = async(req, res) => {
         return;
     }
 
-    if(req.method === "GET"){
+    if(req.method === "POST"){
         try{
-            const latitude = 50.1960//parseFloat(req.body.latitude);
-            const longitude = 6.8712//parseFloat(req.body.longitude);
-
-            const location = {
-                latitude: latitude,
-                longitude: longitude
-            }
+            const latitude = parseFloat(req.body.latitude);
+            const longitude = parseFloat(req.body.longitude);
 
             const radius = 5000;
             const query = `
                 [out:json][timeout:25];
                 (
-                    node["amenity"="hospital"](around:${radius},${location.latitude},${location.longitude});
-                    way["amenity"="hospital"](around:${radius},${location.latitude},${location.longitude});
-                    relation["amenity"="hospital"](around:${radius},${location.latitude},${location.longitude});
+                    node["amenity"="hospital"](around:${radius},${latitude},${longitude});
+                    way["amenity"="hospital"](around:${radius},${latitude},${longitude});
+                    relation["amenity"="hospital"](around:${radius},${latitude},${longitude});
                 );
                 out center tags;
                 `;
